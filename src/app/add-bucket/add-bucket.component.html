@@ -1,5 +1,12 @@
 <!-- <button md-raised-button mat-dialog-close="{{childValue}}">Add</button> -->
-<h2 mat-dialog-title class="text-center">{{description}}</h2>
-
-<input type="text" #name />
-<button mat-dialog-close="{{name.value}}" class="ml-3">Save</button>
+<div class="row">
+    <div class="col">
+        <h2 mat-dialog-title class="text-center">{{description}}</h2>
+        <div class="input-group mb-3">
+            <input #name type="text" class="form-control" placeholder="Name to add/update" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="button" mat-dialog-close="{{name.value}}">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

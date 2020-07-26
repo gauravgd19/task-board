@@ -1,5 +1,5 @@
 .card-height {
-    min-height: 700px;
+    min-height: 600px;
 }
 .bottom-0   {
     bottom: 0;
@@ -10,4 +10,20 @@
     right: 0;
     padding: 5px;
     cursor: pointer;
+}
+
+.update{
+    position: absolute;
+    top: 0;
+    right: 30px;
+    padding: 5px;
+    cursor: pointer;
+}
+.height-80 {
+    min-height: 80px;;
+}
+
+.dark-theme {
+    background-color: black;
+    color: #fff;
 }

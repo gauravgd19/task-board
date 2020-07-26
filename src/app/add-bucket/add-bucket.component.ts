@@ -11,7 +11,7 @@ export class AddBucketComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.description = 'Enter Bucket Name';
+    this.description = 'Please enter name to add/update';
   }
   addBucket(val){
     this.bucketName = val;
