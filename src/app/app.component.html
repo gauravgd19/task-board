@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-body mb-0 bg-primary text-white mat-headline border border-dark">
+            Sample Application
+        </div>
+    </div>
+    <div class="card card-height">
+        <div class="card-body bg-white border border-dark">
+            <button [disabled]="isDisable" type="button" class="btn btn-link float-right mat-title"
+                (click)="openDialog()">
+                <i class="material-icons md-18">add</i>Add another list</button>
+            <div class="row">
+                <div class="col-3 bg-light border border-dark pl-3 pt-4 m-3 font-weight-bold card-height mat-title"
+                    attr.id="{{bucketOne}}" cdkDropListGroup (cdkDropListDropped)="onDrop($event)"
+                    *ngIf="bucketOneEnable">
+                    <span>{{bucketOne}}</span><span><i class="material-icons md-18 close"
+                            (click)="removeBucket(bucketOne)">close</i></span>
+                    <form>
+                        <input *ngIf="isHide" type="text" class="form-control mt-2 mb-4" #status
+                            placeholder="Enter card name" (keyup.enter)="addStatus(status, bucketOne)">
+                        <ul class="list-group mb-2 mt-2" *ngFor="let status of titles.controls; let i = index">
+                            <li class="list-group-item mat-h3" attr.id="status{{i}}" cdkDrag>
+                                {{status.value}} <span><i class="material-icons md-14 close"
+                                        (click)="removeStatus(status)">close</i></span></li>
+                        </ul>
+                    </form>
+                    <button type="button" class="btn btn-link mat-title position-absolute bottom-0"
+                        (click)="openInput()">
+                        <i class="material-icons md-18">add</i>Add a card </button>
+                </div>
+
+
+                <div class="col-3 bg-light border border-dark pl-3 pt-4 m-3 font-weight-bold card-height mat-title"
+                    attr.id="{{bucketTwo}}" cdkDropListGroup (cdkDropListDropped)="onDrop($event)"
+                    *ngIf="bucketTwoEnable">
+                    <span>{{bucketTwo}}</span><span><i class="material-icons md-18 close"
+                            (click)="removeBucket(bucketTwo)">close</i></span>
+                    <form>
+                        <input *ngIf="isHideTwo" type="text" class="form-control mt-2 mb-4" #statusTwo
+                            placeholder="Enter card name" (keyup.enter)="addStatus(statusTwo, bucketTwo)">
+                        <ul class="list-group mb-2 mt-2" *ngFor="let s of progress.controls; let i = index">
+                            <li class="list-group-item mat-h3" attr.id="s{{i}}" cdkDrag>
+                                {{s.value}} <span><i class="material-icons md-14 close"
+                                        (click)="removeStatus(s)">close</i></span></li>
+                        </ul>
+                    </form>
+                    <button type="button" class="btn btn-link mat-title position-absolute bottom-0"
+                        (click)="openInput()">
+                        <i class="material-icons md-18">add</i>Add a card </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

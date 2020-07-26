@@ -1,0 +1,13 @@
+.card-height {
+    min-height: 700px;
+}
+.bottom-0   {
+    bottom: 0;
+}
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    cursor: pointer;
+}
